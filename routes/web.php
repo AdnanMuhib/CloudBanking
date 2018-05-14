@@ -20,3 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('customer','CustomerController');
+Route::resource('branch','BranchController');
+Route::resource('cheque','ChequeController');
+Route::resource('currencyrate','CurrencyRateController');
+Route::resource('draft','DraftController');
+Route::resource('employee','EmployeeController');
+Route::resource('fingerprint','FingerprintController');
+Route::resource('transaction','TransactionController');
+Route::resource('wallet','WalletController');
