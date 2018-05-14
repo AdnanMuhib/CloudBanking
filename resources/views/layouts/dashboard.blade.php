@@ -54,37 +54,19 @@
             <!-- END RESPONSIVE MENU TOGGLER -->
             <div class="header-quick-nav ">
                 <!-- BEGIN TOP NAVIGATION MENU -->
-                <div class="pull-left ">
-                    <ul class="nav quick-section ">
-                        <li class="quicklinks ">
-                            <a href="# " class=" " id="layout-condensed-toggle ">
-                                <i class="material-icons ">menu</i>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav quick-section ">
-                        <li class="quicklinks m-r-10 ">
-                            <a href="# " class=" ">
-                                <i class="material-icons ">refresh</i>
-                            </a>
-                        </li>
-                        <li class="quicklinks ">
-                            <a href="# " class=" ">
-                                <i class="material-icons ">apps</i>
-                            </a>
-                        </li>
-                        <li class="quicklinks ">
-                            <span class="h-seperate "></span>
-                        </li>
-                        <li class="quicklinks ">
-                            <a href="# " class=" " id="my-task-list " data-placement="bottom " data-content='' data-toggle="dropdown
-    " data-original-title="Notifications ">
-                                <i class="material-icons ">notifications_none</i>
-                                <span class="badge badge-important bubble-only "></span>
-                            </a>
-                        </li>
+                <div class="pull-right ">
+                    <ul class="nav quick-section" style="padding-top:5px; padding-right:10px; font-size:15px">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                       </a>
 
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                    </form>
                     </ul>
+
                 </div>
                 <div id="notification-list " style="display:none ">
                     <div style="width:300px ">
@@ -157,11 +139,10 @@
             <!-- BEGIN MINI-PROFILE -->
             <div class="page-sidebar-wrapper scrollbar-dynamic " id="main-menu-wrapper ">
                 <div class="user-info-wrapper sm ">
-                    
+
                     <div class="user-info sm ">
                         <div class="username ">
-                            User
-                            <span class="semi-bold ">Name</span>
+                            {{ ucfirst(Auth::user()->name) }}
                         </div>
                     </div>
                 </div>
