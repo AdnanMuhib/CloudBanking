@@ -159,6 +159,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        // PDF Report Service Provider
+        Jimmyjs\ReportGenerator\ServiceProvider::class,
 
     ],
 

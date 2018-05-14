@@ -23,6 +23,7 @@
     <!-- BEGIN CORE CSS FRAMEWORK -->
     <link href="dash/css/webarch.css " rel="stylesheet " type="text/css " />
     <!-- END CORE CSS FRAMEWORK -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
