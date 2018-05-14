@@ -8,20 +8,20 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!-- BEGIN PLUGIN CSS -->
-    <link href="dash/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('dash/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- <link href="assets/plugins/jquery-metrojs/MetroJs.min.css" rel="stylesheet" type="text/css" /> -->
-    <link rel="stylesheet" type="text/css" href="dash/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="dash/css/component.css" />
-    <link rel="stylesheet" type="text/css" href="dash/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('dash/css/demo.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('dash/css/component.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('dash/css/owl.carousel.css')}}" />
 
-    <link href="dash/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="dash/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('dash/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('dash/css/bootstrap-theme.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="dash/css/animate.min.css" rel="stylesheet" type="text/css" />
-    <link href="dash/css/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('dash/css/animate.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('dash/css/jquery.scrollbar.css')}}" rel="stylesheet" type="text/css" />
     <!-- END PLUGIN CSS -->
     <!-- BEGIN CORE CSS FRAMEWORK -->
-    <link href="dash/css/webarch.css " rel="stylesheet " type="text/css " />
+    <link href="{{asset('dash/css/webarch.css')}} " rel="stylesheet " type="text/css " />
     <!-- END CORE CSS FRAMEWORK -->
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -143,7 +143,9 @@
 
                     <div class="user-info sm ">
                         <div class="username ">
-                            {{ ucfirst(Auth::user()->name) }}
+                        @if(Auth()->check())
+                         {{  ucfirst(Auth::user()->name)}}
+                        @endif
                         </div>
                     </div>
                 </div>
@@ -158,9 +160,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html ">
+                        <a href="/branch">
                             <i class="fa fa-money "></i>
-                            <span class="title ">Transactions</span>
+                            <span class="title ">Branches</span>
                         </a>
                     </li>
                     <li>
@@ -177,14 +179,14 @@
                     </li>
 
                     <li>
-                        <a href="index.html ">
+                        <a href="/currencyrate">
                             <i class="material-icons ">home</i>
                             <span class="title ">Employees</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="index.html ">
+                        <a href="currencyrate">
                             <i class="material-icons ">home</i>
                             <span class="title ">Currency Rate</span>
                         </a>
@@ -454,15 +456,15 @@
     </div>
     <!-- END CONTAINER -->
     <!-- BEGIN CORE JS FRAMEWORK-->
-    <script src="dash/js/pace.min.js " type="text/javascript "></script>
+    <script src="{{asset('dash/js/pace.min.js')}} " type="text/javascript "></script>
     <!-- BEGIN JS DEPENDECENCIES-->
-    <script src="dash/js/jquery-1.11.3.min.js " type="text/javascript "></script>
-    <script src="dash/js/bootstrap.min.js " type="text/javascript "></script>
-    <script src="dash/js/jquery.blockui.min.js " type="text/javascript "></script>
-    <script src="dash/js/jquery.unveil.min.js " type="text/javascript "></script>
-    <script src="dash/js/jquery.scrollbar.min.js " type="text/javascript "></script>
-    <script src="dash/js/jquery.animateNumbers.js " type="text/javascript "></script>
-    <script src="dash/js/jquery.validate.min.js " type="text/javascript "></script>
+    <script src="{{asset('dash/js/jquery-1.11.3.min.js')}}" type="text/javascript "></script>
+    <script src="{{asset('dash/js/bootstrap.min.js')}} " type="text/javascript "></script>
+    <script src="{{asset('dash/js/jquery.blockui.min.js')}}" type="text/javascript "></script>
+    <script src="{{asset('dash/js/jquery.unveil.min.js')}}" type="text/javascript "></script>
+    <script src="{{asset('dash/js/jquery.scrollbar.min.js')}}" type="text/javascript "></script>
+    <script src="{{asset('dash/js/jquery.animateNumbers.js')}}" type="text/javascript "></script>
+    <script src="{{asset('dash/js/jquery.validate.min.js')}}" type="text/javascript "></script>
 </body>
 
 </html>

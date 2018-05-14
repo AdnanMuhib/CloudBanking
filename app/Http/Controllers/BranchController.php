@@ -36,7 +36,13 @@ class BranchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //return $request;
+        $branch = new Branch;
+        $branch->name = $request->name;
+        $branch->address = $request->address;
+        $branch->save();
+        //return $branch;
+        return redirect('/branch')->with('message', 'Added Successfully');
     }
 
     /**
@@ -56,9 +62,11 @@ class BranchController extends Controller
      * @param  \App\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function edit(Branch $branch)
+    public function edit($id)
     {
-        //
+        $data = Branch::find($id);
+
+        return view('branches.edit',['data'=>$data]);
     }
 
     /**
@@ -68,9 +76,14 @@ class BranchController extends Controller
      * @param  \App\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Branch $branch)
+    public function update(Request $request,  $id)
     {
-        //
+        $data = Branch::find($id);
+        $data->name = $request->name;
+        $data->address = $request->address;
+        $data->save();
+
+        return redirect('/branch')->with('message', 'Updated Successfully');;
     }
 
     /**
@@ -79,8 +92,9 @@ class BranchController extends Controller
      * @param  \App\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Branch $branch)
+    public function destroy($id)
     {
-        //
+        Branch::find($id)->delete();
+        return redirect('/branch')->with('message', 'Deleted Successfully');;
     }
 }

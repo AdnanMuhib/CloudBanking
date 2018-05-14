@@ -14,7 +14,8 @@ class CurrencyRateController extends Controller
      */
     public function index()
     {
-        //
+        $result = CurrencyRate::get();
+        return view('currencyrate.index',compact('result'));
     }
 
     /**
@@ -24,7 +25,8 @@ class CurrencyRateController extends Controller
      */
     public function create()
     {
-        //
+        return view('currencyrate.create');
+
     }
 
     /**
@@ -35,7 +37,16 @@ class CurrencyRateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $currRate = new CurrencyRate;
+        $currRate->PKR = $request->pkr;
+        $currRate->INR = $request->pkr * 0.59;
+        $currRate->EURO = $request->pkr * 0.0073;
+        $currRate->POUND = $request->pkr * 0.0064 ;
+        $currRate->DIRHAM = $request->pkr * 0.032;
+        $currRate->RIYAL = $request->pkr * 0.032;
+        $currRate->save();
+
+        return redirect('/currencyrate')->with('message', 'Added Successfully');
     }
 
     /**
