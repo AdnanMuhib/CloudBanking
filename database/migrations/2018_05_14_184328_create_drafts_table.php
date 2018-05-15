@@ -16,11 +16,11 @@ class CreateDraftsTable extends Migration
         Schema::create('drafts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('customer_id');
-            $table->integer('rcv_account_id');
+            $table->integer('rcv_account_id')->nullable();
             $table->string('sender_name');
             $table->string('sender_cnic');
             $table->integer('draft_amount');
-            $table->date('draft_date');
+            $table->timestamp('draft_date');
             $table->date('expiry_date');
             $table->timestamps();
         });

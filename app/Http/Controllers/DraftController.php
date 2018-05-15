@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use App\Draft;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class DraftController extends Controller
      */
     public function index()
     {
-        //
+        $result = Draft::get();
+        return view('draft.index', compact('result'));
     }
 
     /**
@@ -24,7 +26,7 @@ class DraftController extends Controller
      */
     public function create()
     {
-        //
+        return view('draft.create');
     }
 
     /**
@@ -35,7 +37,21 @@ class DraftController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newDraft = new Draft;
+        $this->validate($request,
+        [
+            'sender_cnic' => 'digits:13'
+        ]);
+        $email = Auth::user()->email;
+        $data = User::where('email','=',$email)->get();
+        $newDraft->customer_id = $data[0]->id;
+        $newDraft->sender_name = $request->sender_name;
+        $newDraft->sender_cnic = $request->sender_cnic;
+        $newDraft->draft_amount = $request->draft_amount;
+        $newDraft->expiry_date = $request->expiry_date;
+        $newDraft->save();
+
+        return redirect('/draft')->with('message', 'Created Successfully');
     }
 
     /**

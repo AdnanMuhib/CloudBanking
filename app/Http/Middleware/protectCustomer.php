@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class protectAdmin
+class protectCustomer
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,10 @@ class protectAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->role != 'admin') return redirect('dash');
+        if(Auth::user()->role == 'customer') return $next($request);
 
-        return $next($request);
+        return redirect('home');
+
+
     }
 }
