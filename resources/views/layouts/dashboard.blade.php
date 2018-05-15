@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />
-    @section('headerfiles')
-    @show
     <!-- BEGIN PLUGIN CSS -->
     <link href="{{asset('dash/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- <link href="assets/plugins/jquery-metrojs/MetroJs.min.css" rel="stylesheet" type="text/css" /> -->
@@ -26,7 +24,6 @@
     <link href="{{asset('dash/css/webarch.css')}} " rel="stylesheet " type="text/css " />
     <!-- END CORE CSS FRAMEWORK -->
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -169,7 +166,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/cheque">
+                        <a href="index.html ">
                             <i class="material-icons ">home</i>
                             <span class="title ">Cheque</span>
                         </a>
@@ -192,6 +189,20 @@
                         <a href="currencyrate">
                             <i class="material-icons ">home</i>
                             <span class="title ">Currency Rate</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="camera">
+                            <i class="material-icons ">home</i>
+                            <span class="title ">Camera</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="report">
+                            <i class="material-icons ">home</i>
+                            <span class="title ">Report</span>
                         </a>
                     </li>
 
