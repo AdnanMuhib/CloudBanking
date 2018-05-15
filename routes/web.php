@@ -19,7 +19,13 @@ Route::get('/camera', function () {
 });
 
 
-Route::get('/report','PdfReportController@displayReport');
+Route::get('/report','PdfReportController@report');
+Route::post('/currencyReport','PdfReportController@currencyReport');
+Route::post('/transactionReport','PdfReportController@transactionReport');
+Route::post('/customerReport','PdfReportController@customerReport');
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
