@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/camera', function () {
+    return view('camera');
+});
+
 
 Route::get('/report','PdfReportController@displayReport');
 Auth::routes();
