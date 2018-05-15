@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\CurrencyRate;
+use App\Customer;
 use PdfReport;
 use Illuminate\Support\Facades\DB;
 
@@ -49,8 +50,38 @@ class PdfReportController extends Controller
         return view('report');
     }
 
-    public function customerReport(){
-        return view('report');
+    public function customerReport(Request $request){
+        $report_title = "Customer Report — Cloud Banking";
+
+		// For displaying filters description on header.
+	    $meta = [
+	        'Report Type'=>'Customer Report',
+	        'Date' => date("Y/m/d")
+        ];
+        $result;
+
+        if($request->gender != 'all'){
+        $result = Customer::select(['name', 'dob', 'address', 'cnic', 'gender', 'created_at'])
+        ->whereBetween('created_at',[$request->from, $request->to])
+        ->where('gender','=', $request->gender);
+        } else {
+        $result = Customer::select(['name', 'dob', 'address', 'cnic', 'gender', 'created_at'])
+        ->whereBetween('created_at',[$request->from, $request->to]);
+        }
+	    // Set Column to be displayed
+	    $columns = [
+            'Join Date' => 'created_at',
+	        'Name' => 'ame',
+	        'DOB' => 'dob',
+	        'Address' => 'address',
+	        'CNIC' => 'cnic',
+	        'GENDER' => 'gender',
+	    ];
+	    //$pdf = PdfReport::of('pdf.invoice', $users);
+	     return PdfReport::of($report_title, $meta, $result, $columns)
+	     ->setCss([
+	     	'.head-content' => 'border-width: 1px',
+	     ])->setPaper('a4')->stream();
     }
 
 	public function displayReport()
