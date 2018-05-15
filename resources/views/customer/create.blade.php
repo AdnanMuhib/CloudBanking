@@ -6,55 +6,84 @@
     <div class="row">
 
         <div class="col-md-offset-2 col-md-7 col-sm-8 col-xs-8">
-                     <form action='/customer' method="POST">
+                <form action='/customer' method="POST">
                      @csrf
-                     <div class="form-group">
-                       <label class="form-label">User ID</label>
-                       <div class="controls">
-                         <select name="user_id" required class="form-control">
-                           <option value="">Choose User </option>
-                           @foreach($users as $user)
-                           <option value="{{$user->id}}">{{$user->email}}</option>
-                           @endforeach
-                         </select>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="form-label">User ID</label>
+                           <div class="controls">
+                             <select name="user_id" required class="form-control">
+                               <option value="">Choose User </option>
+                               @foreach($users as $user)
+                               <option value="{{$user->id}}">{{$user->email}}</option>
+                               @endforeach
+                             </select>
+                           </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="form-label">Nearby Branch</label>
+                           <div class="controls">
+                             <select name="branch_id" required class="form-control">
+                               <option value="">Choose Branch </option>
+                               @foreach($branches as $branch)
+                               <option value="{{$branch->id}}">{{$branch->name}}</option>
+                               @endforeach
+                             </select>
+                           </div>
+                          </div>          
+                        </div>
+                      </div>
+                     <div class="row">
+                      <div class="col-md-6">
+                         <div class="form-group">
+                               <label class="form-label" >Name</label>
+                              <div class="controls">
+                                <input type="text" class="form-control" name="name" required>
+                              </div>
+                         </div>
+                      </div>
+                       <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="form-label" >Date of birth</label>
+                              <div class="controls">
+                                <input type="date" class="form-control" name="dob" required>
+                              </div>
+                          </div>
                        </div>
                      </div>
-                        <div class="form-group">
-                        <label class="form-label" >Name</label>
-                        <div class="controls">
-                          <input type="text" class="form-control" name="name" required>
-                        </div>
-                      </div>
-
-                        <div class="form-group">
-                        <label class="form-label" >Date of birth</label>
-                        <div class="controls">
-                          <input type="date" class="form-control" name="dob" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="form-label" >Address</label>
-                        <div class="controls">
-                          <input type="text" class="form-control" name="address" required>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label" >CNIC</label>
-                        <div class="controls">
-                          <input type="text" class="form-control" name="cnic" required minlength="13" maxlength="13">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label" >Gender</label>
-                        <div class="controls">
-                          <select name="gender" required class="form-control">
-                            <option value="">Choose Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </select>
-                        </div>
-                      </div>
+                     <div class="row">
+                       <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-label" >Address</label>
+                            <div class="controls">
+                              <input type="text" class="form-control" name="address" required>
+                            </div>
+                          </div>
+                       </div>
+                       <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-label" >CNIC</label>
+                            <div class="controls">
+                              <input type="text" class="form-control" name="cnic" required minlength="13" maxlength="13">
+                            </div>
+                          </div>
+                       </div>
+                       </div>
+                       <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-label" >Gender</label>
+                            <div class="controls">
+                              <select name="gender" required class="form-control">
+                                <option value="">Choose Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                            </div>
+                          </div>
+                       </div>
                       <div class="form-group pull-right">
 
                         <div class="controls">
@@ -62,7 +91,7 @@
                         </div>
                       </div>
 
-                     </form>
+              </form>
 
         </div>
     </div>

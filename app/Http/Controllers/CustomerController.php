@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use Illuminate\Http\Request;
 use App\User;
+use App\Branch;
 
 class CustomerController extends Controller
 {
@@ -27,7 +28,8 @@ class CustomerController extends Controller
     public function create()
     {
         $users = User::all();
-        return view('customer.create',compact('users'));
+        $branches = Branch::all();
+        return view('customer.create',compact('users','branches'));
     }
 
     /**
