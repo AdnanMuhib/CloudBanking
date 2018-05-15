@@ -6,6 +6,7 @@ use App\User;
 use App\CurrencyRate;
 use App\Customer;
 use PdfReport;
+use App\Transaction;
 use Illuminate\Support\Facades\DB;
 
 class PdfReportController extends Controller
@@ -46,8 +47,35 @@ class PdfReportController extends Controller
 	     ])->setPaper('a4')->stream();
     }
 
-    public function transactionReport(){
-        return view('report');
+    public function transactionReport(Request $request){
+        $report_title = "Transactions Report — Cloud Banking";
+
+		// For displaying filters description on header.
+	    $meta = [
+	        'Report Type'=>'Transactions Report',
+	        'Date' => date("Y/m/d")
+        ];
+
+        $result = Transaction::select('customer_id','amount','trans_type','created_at');//->with('customer')->get();//select('customer_id','amount','trans_type','created_at');
+        //return $result;
+        // $result = DB::table('transactions')
+        //     ->select('customers.name', 'transactions.amount', 'transactions.trans_type', 'transactions.created_at')
+        //     ->join('customers', 'transactions.customer_id', '=', 'customers.id')
+        //     ->get();
+
+	    // Set Column to be displayed
+	    $columns = [
+            'Customer' => 'customer_id',
+	        'Amount' => 'amount',
+	        'Transactions Type' => 'trans_type',
+	        'Date' => 'created_at',
+        ];
+
+	    //$pdf = PdfReport::of('pdf.invoice', $users);
+	     return PdfReport::of($report_title, $meta, $result, $columns)
+	     ->setCss([
+	     	'.head-content' => 'border-width: 1px',
+	     ])->setPaper('a4')->stream();
     }
 
     public function customerReport(Request $request){

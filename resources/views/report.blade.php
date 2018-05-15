@@ -44,7 +44,7 @@
                         <br>
                         <h3>Transaction Report</h3>
 
-                     <form action='/customerReport' method="POST">
+                     <form action='/transactionReport' method="POST">
                      @csrf
                          <div class="form-group">
                         <label class="form-label">From Date</label>
