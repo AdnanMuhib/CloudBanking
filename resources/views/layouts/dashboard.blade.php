@@ -164,52 +164,52 @@
                     </li>
                     <li>
                         <a href="/branch">
-                            <i class="fa fa-money "></i>
+                            <i class="fa fa-sign-out "></i>
                             <span class="title ">Branches</span>
                         </a>
                     </li>
                     <li>
                         <a href="index.html ">
-                            <i class="material-icons ">home</i>
+                            <i class="fa fa-money "></i>
                             <span class="title ">Cheque</span>
                         </a>
                     </li>
                     <li>
                         <a href="index.html ">
-                            <i class="material-icons ">home</i>
+                            <i class="fa fa-download "></i>
                             <span class="title ">Drafts</span>
                         </a>
                     </li>
 
-                    <li>
+                    <!-- <li>
                         <a href="#">
-                            <i class="material-icons ">home</i>
+                            <i class="fa fa-user "></i>
                             <span class="title ">Employees</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="/customer">
-                            <i class="material-icons ">home</i>
+                            <i class="fa fa-user "></i>
                             <span class="title ">Customers</span>
                         </a>
                     </li>
                     <li>
                         <a href="/currencyrate">
-                            <i class="material-icons ">home</i>
+                            <i class="fa fa-money "></i>
                             <span class="title ">Currency Rate</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="/camera">
-                            <i class="material-icons ">home</i>
-                            <span class="title ">Camera</span>
+                            <i class="fa fa-camera "></i>
+                            <span class="title ">Finger Print</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="/report">
-                            <i class="material-icons ">home</i>
+                            <i class="fa fa-file "></i>
                             <span class="title ">Report</span>
                         </a>
                     </li>
