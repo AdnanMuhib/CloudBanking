@@ -13,8 +13,8 @@
 
 @section('body')
 <p>Scan Your Fingerprint</p>
-    <!-- <div id="camera_info"></div> -->
-    <!-- <div id="stream_stats"></div> -->
+    <div id="camera_info"></div>
+    <div id="stream_stats"></div>
 <div class="row">
 	<div class="col-md-4" style="border:20px solid white;">
 		<div id="camera">

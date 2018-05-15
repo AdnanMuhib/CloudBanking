@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use Illuminate\Http\Request;
+use App\User;
 
 class CustomerController extends Controller
 {
@@ -14,7 +15,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $result = Customer::all();
+        return view('customer.index',compact('result'));
     }
 
     /**
@@ -24,7 +26,8 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        return view('customer.create',compact('users'));
     }
 
     /**
@@ -35,7 +38,9 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer =  new Customer($request->all());
+        $customer->save();
+        return redirect('/customer');
     }
 
     /**

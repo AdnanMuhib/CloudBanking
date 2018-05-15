@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
     <title>@yield('title') - Cloud Banking</title>
@@ -24,6 +25,8 @@
     <link href="{{asset('dash/css/webarch.css')}} " rel="stylesheet " type="text/css " />
     <!-- END CORE CSS FRAMEWORK -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    @section('headerfiles')
+    @show
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -179,14 +182,19 @@
                     </li>
 
                     <li>
-                        <a href="/currencyrate">
+                        <a href="#">
                             <i class="material-icons ">home</i>
                             <span class="title ">Employees</span>
                         </a>
                     </li>
-
                     <li>
-                        <a href="currencyrate">
+                        <a href="/customer">
+                            <i class="material-icons ">home</i>
+                            <span class="title ">Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/currencyrate">
                             <i class="material-icons ">home</i>
                             <span class="title ">Currency Rate</span>
                         </a>
