@@ -201,14 +201,14 @@
                     </li>
 
                     <li>
-                        <a href="camera">
+                        <a href="/camera">
                             <i class="material-icons ">home</i>
                             <span class="title ">Camera</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="report">
+                        <a href="/report">
                             <i class="material-icons ">home</i>
                             <span class="title ">Report</span>
                         </a>
