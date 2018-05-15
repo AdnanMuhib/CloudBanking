@@ -169,13 +169,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html ">
+                        <a href="/cheque">
                             <i class="fa fa-money "></i>
                             <span class="title ">Cheque</span>
                         </a>
                     </li>
                     <li>
-                        <a href="index.html ">
+                        <a href="/draft">
                             <i class="fa fa-download "></i>
                             <span class="title ">Drafts</span>
                         </a>
